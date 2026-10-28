@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation("io.github.thechance101:chart:1.1.0")
     implementation("androidx.navigation:navigation-compose:2.10.2")
+    implementation("com.google.android.gms:play-services-code-scanner:16.1.0")
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)

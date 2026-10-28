@@ -50,7 +50,8 @@ class MainActivity : ComponentActivity() {
                     topBar = {
                         TopBar(
                             onChartTypeClick = { navController.navigate("chart") },
-                            onSettingsClick = { navController.navigate("settings") }
+                            onSettingsClick = { navController.navigate("settings") },
+                            onBarcodeClick = { navController.navigate("barcode") }
                         )
                     }
                 ) { innerPadding ->
@@ -84,8 +85,13 @@ class MainActivity : ComponentActivity() {
                                 onDone = { navController.popBackStack() }
                             )
                         }
-                    }
 
+                        composable("barcode") {
+                            BarcodeScreen(
+                                onDone = { navController.popBackStack() }
+                            )
+                        }
+                    }
                 }
             }
         }
@@ -95,7 +101,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun TopBar(
     onChartTypeClick: () -> Unit,
-    onSettingsClick: () -> Unit
+    onSettingsClick: () -> Unit,
+    onBarcodeClick: () -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
 
@@ -133,6 +140,13 @@ private fun TopBar(
                     onClick = {
                         expanded = false
                         onSettingsClick()
+                    }
+                )
+                DropdownMenuItem(
+                    text = { Text("Vytvořit čárový kód") },
+                    onClick = {
+                        expanded = false
+                        onBarcodeClick()
                     }
                 )
             }

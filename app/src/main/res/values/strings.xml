@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TAMZ</string>
+    <string name="openweather_api_key">7d6d82fbca6eff78afe2a176ab50a7d2</string>
 </resources>
